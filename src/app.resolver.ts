@@ -1,4 +1,4 @@
-import { Args, Resolver, Mutation, Query } from '@nestjs/graphql';
+import { Args, Resolver, Mutation } from '@nestjs/graphql';
 import { LoginResponse } from './entities/login-user.entity';
 import { LoginUserDto } from './dto/login-user.dto';
 import { AuthorizationResponse } from './entities/authorization.entity';

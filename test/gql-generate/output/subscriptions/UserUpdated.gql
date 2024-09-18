@@ -1,0 +1,50 @@
+subscription UserUpdated($language: String, $language1: String, $UserId: Int!){
+    UserUpdated(UserId: $UserId) {
+        id
+        username
+        email
+        createdAt
+        context {
+            user {
+                id
+                username
+                email
+                createdAt
+                context {
+                    domain
+                }
+                details{
+                    __typename
+                    ... on Guest {
+                        region(language: $language)
+                    }
+                    ... on Member {
+                        address
+                    }
+                    ... on Premium {
+                        location
+                        card {
+                            number
+                            type {
+                                key
+                            }
+                        }
+                    }
+                }
+            }
+            domain
+        }
+        details{
+            __typename
+            ... on Guest {
+                region(language: $language1)
+            }
+            ... on Member {
+                address
+            }
+            ... on Premium {
+                location
+            }
+        }
+    }
+}

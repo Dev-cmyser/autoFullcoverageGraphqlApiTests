@@ -1,24 +1,24 @@
 import { Field, InputType } from '@nestjs/graphql';
 import { IsEmail } from 'class-validator';
 
-@InputType({ description: 'Данные для регистрации' })
+@InputType()
 export class RegisterUserDto {
-  @Field(() => String, { description: 'Имя' })
+  @Field(() => String)
   firstName: string;
 
-  @Field(() => String, { description: 'Фамилия' })
+  @Field(() => String)
   lastName: string;
 
-  @Field(() => String, { description: 'Почта' })
+  @Field(() => String)
   @IsEmail()
   email: string;
 
-  @Field(() => String, { description: 'Телефон' })
+  @Field(() => String)
   phone: string;
 
-  @Field(() => String, { description: 'Пароль' })
+  @Field(() => String)
   password: string;
 
-  @Field(() => String, { description: 'Подтверждение пароля' })
+  @Field(() => String)
   confirmPassword: string;
 }

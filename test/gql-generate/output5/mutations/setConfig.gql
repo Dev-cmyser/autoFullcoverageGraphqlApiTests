@@ -1,0 +1,8 @@
+mutation setConfig($domain: String!, $domain1: String!, $domain2: String!, $prefs: PrefsInput){
+    setConfig(prefs: $prefs) {
+        language
+        level(domain: $domain)
+        lastSeen(domain: $domain1)
+        theme(domain: $domain2)
+    }
+}

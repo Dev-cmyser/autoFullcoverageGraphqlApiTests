@@ -3,12 +3,12 @@ import { IsNotEmpty, IsString } from 'class-validator';
 
 @InputType()
 export class LoginUserDto {
-  @Field(() => String, { description: 'Учетные данные' })
+  @Field(() => String)
   @IsString()
   @IsNotEmpty()
   credentials: string;
 
-  @Field(() => String, { description: 'Пароль' })
+  @Field(() => String)
   @IsString()
   @IsNotEmpty()
   password: string;

@@ -1,0 +1,5 @@
+query members{
+    members {
+        address
+    }
+}

@@ -1,6 +1,10 @@
+import {
+  ApolloFederationDriver,
+  ApolloFederationDriverConfig,
+} from '@nestjs/apollo';
 import { Module } from '@nestjs/common';
-import { AppResolver } from './app.resolver';
 import { GraphQLModule } from '@nestjs/graphql';
+import { AppResolver } from './app.resolver';
 
 @Module({
   imports: [

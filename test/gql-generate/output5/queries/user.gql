@@ -1,0 +1,26 @@
+query user($language: String, $id: Int!){
+    user(id: $id) {
+        id
+        username
+        email
+        createdAt
+        context {
+            domain
+        }
+        details{
+            __typename
+            ... on Guest {
+                region(language: $language)
+            }
+            ... on Member {
+                address
+            }
+            ... on Premium {
+                location
+                card {
+                    number
+                }
+            }
+        }
+    }
+}

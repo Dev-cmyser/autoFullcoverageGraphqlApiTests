@@ -1,0 +1,50 @@
+mutation signup($language: String, $language1: String, $email: String!, $username: String!, $password: String!){
+    signup(email: $email, username: $username, password: $password) {
+        token
+        user {
+            id
+            username
+            email
+            createdAt
+            context {
+                user {
+                    id
+                    username
+                    email
+                    createdAt
+                    details{
+                        __typename
+                        ... on Guest {
+                            region(language: $language)
+                        }
+                        ... on Member {
+                            address
+                        }
+                        ... on Premium {
+                            location
+                            card {
+                                number
+                                type {
+                                    key
+                                }
+                            }
+                        }
+                    }
+                }
+                domain
+            }
+            details{
+                __typename
+                ... on Guest {
+                    region(language: $language1)
+                }
+                ... on Member {
+                    address
+                }
+                ... on Premium {
+                    location
+                }
+            }
+        }
+    }
+}
