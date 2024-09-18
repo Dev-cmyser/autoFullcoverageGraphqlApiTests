@@ -33,7 +33,6 @@ function generateFile(request: string): string {
 
         const res = await graphqlRequest2(gqls.${request}, variables, [
           { name: 'Authorization', value: "Bearer " + consts.accesToken },
-          { name: 'branchuid', value: consts.branchUuid },
         ]);
 
         if (expectError) {
@@ -118,7 +117,7 @@ function main(options: BuildOptions): void {
   resolveDestDirPath(options.destDirPath);
   let gqlPath = options.destDirPath;
   const parts = gqlPath.split('/');
-  parts.pop();
+  console.log(parts);
   parts.pop();
   parts.pop();
   gqlPath = parts.join('/');

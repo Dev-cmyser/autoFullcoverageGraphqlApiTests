@@ -113,7 +113,7 @@ function generateTestCaseFromSchema(
   variables: any,
 ): void {
   const fileContent = `
-import { DataProviderArray } from '../../../common/interfaces/data-provider.interface';
+import { DataProviderArray } from 'test/interfaces/data-provider.interface';
 
 
 export function ${request}Provider(): DataProviderArray {
@@ -144,7 +144,6 @@ function main(options: BuildOptions): void {
 
   let gqlPath = options.destDirPath;
   const parts = gqlPath.split('/');
-  parts.pop();
   parts.pop();
   parts.pop();
   gqlPath = parts.join('/');

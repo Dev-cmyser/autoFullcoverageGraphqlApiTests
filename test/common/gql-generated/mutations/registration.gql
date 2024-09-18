@@ -1,0 +1,6 @@
+mutation registration($dto: RegisterUserDto!){
+    registration(dto: $dto) {
+        accessToken
+        refreshToken
+    }
+}

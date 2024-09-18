@@ -1,0 +1,7 @@
+mutation login($dto: LoginUserDto!){
+    login(dto: $dto) {
+        refresh
+        access
+        username
+    }
+}

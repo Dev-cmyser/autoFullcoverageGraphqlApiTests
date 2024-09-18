@@ -18,7 +18,7 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
-    "gql-generate": "chmod +x ./scripts/run-gql-generate.sh && .scripts/run-gql-generate.sh"
+    "gql-generate": "chmod +x ./scripts/run-gql-generate.sh && ./scripts/run-gql-generate.sh"
   },
   "dependencies": {
     "@apollo/server": "^4.11.0",

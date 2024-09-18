@@ -13,7 +13,7 @@ function normalizeString(str: string): string {
     .trim();
 }
 const command =
-  'ts-node config/scripts/development/gql-generate.ts --schemaFilePath ./libs/util/test/gql-generate/subgraph.graphql  --destDirPath ./libs/util/test/gql-generate/';
+  'ts-node scripts/gql-generate.ts --schemaFilePath ./test/gql-generate/subgraph.graphql  --destDirPath ./test/gql-generate/';
 
 describe('cryptoUtil', () => {
   it('should validate Generated Queries', async () => {
